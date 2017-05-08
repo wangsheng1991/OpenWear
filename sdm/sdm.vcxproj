@@ -1,0 +1,206 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project DefaultTargets="Build" ToolsVersion="12.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup Label="ProjectConfigurations">
+    <ProjectConfiguration Include="Debug|Win32">
+      <Configuration>Debug</Configuration>
+      <Platform>Win32</Platform>
+    </ProjectConfiguration>
+    <ProjectConfiguration Include="Debug|x64">
+      <Configuration>Debug</Configuration>
+      <Platform>x64</Platform>
+    </ProjectConfiguration>
+    <ProjectConfiguration Include="Release|Win32">
+      <Configuration>Release</Configuration>
+      <Platform>Win32</Platform>
+    </ProjectConfiguration>
+    <ProjectConfiguration Include="Release|x64">
+      <Configuration>Release</Configuration>
+      <Platform>x64</Platform>
+    </ProjectConfiguration>
+  </ItemGroup>
+  <PropertyGroup Label="Globals">
+    <ProjectGuid>{07A7C74A-C892-4646-84EA-5390A7EE84BD}</ProjectGuid>
+    <Keyword>Win32Proj</Keyword>
+  </PropertyGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.Default.props" />
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'" Label="Configuration">
+    <ConfigurationType>Application</ConfigurationType>
+    <UseDebugLibraries>true</UseDebugLibraries>
+    <PlatformToolset>v120</PlatformToolset>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|x64'" Label="Configuration">
+    <ConfigurationType>Application</ConfigurationType>
+    <UseDebugLibraries>true</UseDebugLibraries>
+    <PlatformToolset>v120</PlatformToolset>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'" Label="Configuration">
+    <ConfigurationType>Application</ConfigurationType>
+    <UseDebugLibraries>false</UseDebugLibraries>
+    <PlatformToolset>v120</PlatformToolset>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|x64'" Label="Configuration">
+    <ConfigurationType>Application</ConfigurationType>
+    <UseDebugLibraries>false</UseDebugLibraries>
+    <PlatformToolset>v120</PlatformToolset>
+  </PropertyGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.props" />
+  <ImportGroup Label="ExtensionSettings">
+  </ImportGroup>
+  <ImportGroup Label="PropertySheets" Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
+    <Import Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" Label="LocalAppDataPlatform" />
+  </ImportGroup>
+  <ImportGroup Condition="'$(Configuration)|$(Platform)'=='Debug|x64'" Label="PropertySheets">
+    <Import Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" Label="LocalAppDataPlatform" />
+  </ImportGroup>
+  <ImportGroup Label="PropertySheets" Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">
+    <Import Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" Label="LocalAppDataPlatform" />
+  </ImportGroup>
+  <ImportGroup Condition="'$(Configuration)|$(Platform)'=='Release|x64'" Label="PropertySheets">
+    <Import Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" Label="LocalAppDataPlatform" />
+  </ImportGroup>
+  <PropertyGroup Label="UserMacros" />
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
+    <LinkIncremental>true</LinkIncremental>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">
+    <LinkIncremental>true</LinkIncremental>
+    <IncludePath>D:\opencv\build\include;include;$(IncludePath)</IncludePath>
+    <LibraryPath>D:\opencv\build\x64\vc12\lib;$(LibraryPath)</LibraryPath>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">
+    <LinkIncremental>true</LinkIncremental>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|x64'">
+    <LinkIncremental>true</LinkIncremental>
+    <IncludePath>D:\opencv\build\include;include;$(IncludePath)</IncludePath>
+    <LibraryPath>D:\opencv\build\x64\vc12\lib;$(LibraryPath)</LibraryPath>
+  </PropertyGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
+    <ClCompile>
+      <PreprocessorDefinitions>WIN32;_DEBUG;_CONSOLE;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <RuntimeLibrary>MultiThreadedDebugDLL</RuntimeLibrary>
+      <WarningLevel>Level3</WarningLevel>
+      <DebugInformationFormat>ProgramDatabase</DebugInformationFormat>
+      <Optimization>Disabled</Optimization>
+    </ClCompile>
+    <Link>
+      <TargetMachine>MachineX86</TargetMachine>
+      <GenerateDebugInformation>true</GenerateDebugInformation>
+      <SubSystem>Console</SubSystem>
+    </Link>
+  </ItemDefinitionGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">
+    <ClCompile>
+      <PreprocessorDefinitions>WIN32;_DEBUG;_CONSOLE;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <RuntimeLibrary>MultiThreadedDebugDLL</RuntimeLibrary>
+      <WarningLevel>Level3</WarningLevel>
+      <DebugInformationFormat>ProgramDatabase</DebugInformationFormat>
+      <Optimization>Disabled</Optimization>
+    </ClCompile>
+    <Link>
+      <GenerateDebugInformation>true</GenerateDebugInformation>
+      <SubSystem>Console</SubSystem>
+    </Link>
+  </ItemDefinitionGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">
+    <ClCompile>
+      <PreprocessorDefinitions>WIN32;NDEBUG;_CONSOLE;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <RuntimeLibrary>MultiThreadedDLL</RuntimeLibrary>
+      <WarningLevel>Level3</WarningLevel>
+      <DebugInformationFormat>ProgramDatabase</DebugInformationFormat>
+    </ClCompile>
+    <Link>
+      <TargetMachine>MachineX86</TargetMachine>
+      <GenerateDebugInformation>true</GenerateDebugInformation>
+      <SubSystem>Console</SubSystem>
+      <EnableCOMDATFolding>true</EnableCOMDATFolding>
+      <OptimizeReferences>true</OptimizeReferences>
+    </Link>
+  </ItemDefinitionGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Release|x64'">
+    <ClCompile>
+      <PreprocessorDefinitions>WIN32;NDEBUG;_CONSOLE;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <RuntimeLibrary>MultiThreadedDLL</RuntimeLibrary>
+      <WarningLevel>Level3</WarningLevel>
+      <DebugInformationFormat>ProgramDatabase</DebugInformationFormat>
+    </ClCompile>
+    <Link>
+      <GenerateDebugInformation>true</GenerateDebugInformation>
+      <SubSystem>Console</SubSystem>
+      <EnableCOMDATFolding>true</EnableCOMDATFolding>
+      <OptimizeReferences>true</OptimizeReferences>
+    </Link>
+  </ItemDefinitionGroup>
+  <ItemGroup>
+    <ClCompile Include="include\hog.c" />
+    <ClCompile Include="include\ldmarkmodel.cpp" />
+    <ClCompile Include="test_model.cpp" />
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="include\cereal\access.hpp" />
+    <ClInclude Include="include\cereal\archives\adapters.hpp" />
+    <ClInclude Include="include\cereal\archives\binary.hpp" />
+    <ClInclude Include="include\cereal\archives\json.hpp" />
+    <ClInclude Include="include\cereal\archives\portable_binary.hpp" />
+    <ClInclude Include="include\cereal\archives\xml.hpp" />
+    <ClInclude Include="include\cereal\cereal.hpp" />
+    <ClInclude Include="include\cereal\details\helpers.hpp" />
+    <ClInclude Include="include\cereal\details\polymorphic_impl.hpp" />
+    <ClInclude Include="include\cereal\details\static_object.hpp" />
+    <ClInclude Include="include\cereal\details\traits.hpp" />
+    <ClInclude Include="include\cereal\details\util.hpp" />
+    <ClInclude Include="include\cereal\external\base64.hpp" />
+    <ClInclude Include="include\cereal\external\rapidjson\document.h" />
+    <ClInclude Include="include\cereal\external\rapidjson\filestream.h" />
+    <ClInclude Include="include\cereal\external\rapidjson\genericstream.h" />
+    <ClInclude Include="include\cereal\external\rapidjson\internal\pow10.h" />
+    <ClInclude Include="include\cereal\external\rapidjson\internal\stack.h" />
+    <ClInclude Include="include\cereal\external\rapidjson\internal\strfunc.h" />
+    <ClInclude Include="include\cereal\external\rapidjson\prettywriter.h" />
+    <ClInclude Include="include\cereal\external\rapidjson\rapidjson.h" />
+    <ClInclude Include="include\cereal\external\rapidjson\reader.h" />
+    <ClInclude Include="include\cereal\external\rapidjson\stringbuffer.h" />
+    <ClInclude Include="include\cereal\external\rapidjson\writer.h" />
+    <ClInclude Include="include\cereal\external\rapidxml\rapidxml.hpp" />
+    <ClInclude Include="include\cereal\external\rapidxml\rapidxml_iterators.hpp" />
+    <ClInclude Include="include\cereal\external\rapidxml\rapidxml_print.hpp" />
+    <ClInclude Include="include\cereal\external\rapidxml\rapidxml_utils.hpp" />
+    <ClInclude Include="include\cereal\macros.hpp" />
+    <ClInclude Include="include\cereal\types\array.hpp" />
+    <ClInclude Include="include\cereal\types\base_class.hpp" />
+    <ClInclude Include="include\cereal\types\bitset.hpp" />
+    <ClInclude Include="include\cereal\types\boost_variant.hpp" />
+    <ClInclude Include="include\cereal\types\chrono.hpp" />
+    <ClInclude Include="include\cereal\types\common.hpp" />
+    <ClInclude Include="include\cereal\types\complex.hpp" />
+    <ClInclude Include="include\cereal\types\deque.hpp" />
+    <ClInclude Include="include\cereal\types\forward_list.hpp" />
+    <ClInclude Include="include\cereal\types\list.hpp" />
+    <ClInclude Include="include\cereal\types\map.hpp" />
+    <ClInclude Include="include\cereal\types\memory.hpp" />
+    <ClInclude Include="include\cereal\types\polymorphic.hpp" />
+    <ClInclude Include="include\cereal\types\queue.hpp" />
+    <ClInclude Include="include\cereal\types\set.hpp" />
+    <ClInclude Include="include\cereal\types\stack.hpp" />
+    <ClInclude Include="include\cereal\types\string.hpp" />
+    <ClInclude Include="include\cereal\types\tuple.hpp" />
+    <ClInclude Include="include\cereal\types\unordered_map.hpp" />
+    <ClInclude Include="include\cereal\types\unordered_set.hpp" />
+    <ClInclude Include="include\cereal\types\utility.hpp" />
+    <ClInclude Include="include\cereal\types\vector.hpp" />
+    <ClInclude Include="include\cereal_extension\mat_cerealisation.hpp" />
+    <ClInclude Include="include\cereal_extension\mat_serialization.hpp" />
+    <ClInclude Include="include\cereal_extension\ThreadPool.h" />
+    <ClInclude Include="include\feature_descriptor.h" />
+    <ClInclude Include="include\helper.h" />
+    <ClInclude Include="include\hog.h" />
+    <ClInclude Include="include\ldmarkmodel.h" />
+    <ClInclude Include="include\modelcfg.h" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="include\cereal\external\rapidxml\manual.html" />
+  </ItemGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
+  <ImportGroup Label="ExtensionTargets">
+  </ImportGroup>
+</Project>
