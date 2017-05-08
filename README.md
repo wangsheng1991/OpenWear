@@ -3,7 +3,7 @@
 ### 基于sdm的虚拟试戴
 
 <p align="left">
-    <img src="figures/OpenWear.png">
+    <img src="figures/openwear.png">
 </p>
 
 实现了如下功能：
