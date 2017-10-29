@@ -1,20 +1,24 @@
 #include "mrgl.h"
 #define CV_USE_ALL_MODULES 1
 #include "mropencv.h"
+#include "mrlicensechecker.h"
 #include "Glasses.h"
 #include "iostream"
 #include "../sdm/include/ldmarkmodel.h"
 using namespace std;
 
-VideoCapture capture(0);
+int device = 0;
+const std::string modeldir = "model/";
+VideoCapture capture(device);
 CGlasses m_glasses;
 float smoothingeyecenterx = 0;
 float smoothingeyecentery = 0;
 float smoothingscale = 1.1;
 ldmarkmodel modelt;
-std::string modelFilePath = "roboman-landmark-model.bin";
+std::string modelFilePath = modeldir+"roboman-landmark-model.bin";
 cv::Mat current_shape;
-float learningrate = 0.9;
+float learningrate = 0.2;
+const std::string strlogo = "Yanyu Tech";
 void init(void)
 {
 	glEnable(GL_TEXTURE_2D);
@@ -71,10 +75,13 @@ void display(void)
 	glClear(GL_COLOR_BUFFER_BIT | GL_DEPTH_BUFFER_BIT);
 	Mat img;
 	capture >> img;
+	if (!img.data)
+		return;
 	glLoadIdentity();
 	glTranslatef(0.0, 0.0, -4);
 	glPushMatrix();
-	modelt.track(img, current_shape);	
+	modelt.track(img, current_shape);
+	putText(img, strlogo, cv::Point(200, 80), 3,1.6,CV_RGB(0, 0, 255));
 	if (current_shape.cols == 136)
 	{
 		cv::Vec3d eav;		
@@ -92,7 +99,7 @@ void display(void)
 		float distance = getDistance(lefteye, righteye);
 		float scale = 0.008*distance + 0.24;
 		smoothingscale = learningrate*scale + (1 - learningrate)*smoothingscale;
-		cout << smoothingeyecenterx << "," << smoothingeyecentery << endl;
+//		cout << smoothingeyecenterx << "," << smoothingeyecentery << endl;
 //		cout << eav << endl;
 		glTranslatef((smoothingeyecenterx - 320) / 320 * 2, (240 - smoothingeyecentery) / 240 * 2, 0);
 		glRotatef(0.5*eav[0], 1, 0,0);
@@ -132,11 +139,16 @@ void reshape(int w, int h)
 
 int main(int argc, char *argv[])
 {
+	if (!licensecheck())
+	{
+		cout << "许可证已过期，请向作者重新申请试用程序 1293830063@qq.com" << endl;
+		return -1;
+	}
 	glutInit(&argc, argv);
 	glutInitDisplayMode(GLUT_DOUBLE | GLUT_RGB | GLUT_DEPTH);
 	glutInitWindowSize(640, 480);
 	glutInitWindowPosition(300,200);
-	glutCreateWindow("OpenWear");
+	glutCreateWindow("烟雨科技虚拟试戴 试用版");
 	init();
 	glutDisplayFunc(display);
 	glutReshapeFunc(reshape);

@@ -79,7 +79,7 @@ public:
 
     ldmarkmodel(std::vector<std::vector<int>> LandmarkIndexs, std::vector<int> eyes_index, cv::Mat meanShape, std::vector<HoGParam> HoGParams, std::vector<LinearRegressor> LinearRegressors);
 
-    void loadFaceDetModelFile(std::string filePath = "haar_roboman_ff_alt2.xml");
+    void loadFaceDetModelFile(std::string filePath = "model/haar_roboman_ff_alt2.xml");
 
     void train(std::vector<ImageLabel> &mImageLabels);
 

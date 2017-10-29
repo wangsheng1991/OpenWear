@@ -21,7 +21,7 @@ void CGlasses::ReadData()
 {
 	if (!m_pModel)
 	{
-		m_pModel = glmReadOBJ("data/glasses.obj");
+		m_pModel = glmReadOBJ("model/glasses.obj");
 		if (!m_pModel) exit(0);
 		glmUnitize(m_pModel);
 		glmFacetNormals(m_pModel);
